@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [FirestoreService, AngularFirestore],
+  providers: [FirestoreService, AngularFirestore, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

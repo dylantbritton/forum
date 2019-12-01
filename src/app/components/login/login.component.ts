@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FirestoreService } from 'src/app/services/firestore.service';
+import { auth } from 'firebase/app';
 
 @Component({
   selector: 'app-login',
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(user: User) {
-      
+    let token = this.firestoreService.login(user.email, user.password);
   }
 
   ngOnInit() {
